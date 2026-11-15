@@ -1,0 +1,88 @@
+{
+  "username": "hox3r",
+  "display_name": "Hox3r",
+  "role": "Cybersecurity · Bug Bounty",
+  "focus": "Web Application Security",
+  "mode": "Learn / Build / Test / Document",
+  "about": "Cybersecurity-focused developer building toward Bug Bounty and Web Application Security. I build software projects, explore security concepts, and document practical work with an emphasis on clear, reproducible results.",
+  "focus_areas": [
+    "Bug Bounty",
+    "Web Application Security",
+    "Reconnaissance & OSINT",
+    "Linux & Automation"
+  ],
+  "skill_stream": [
+    "BUG BOUNTY",
+    "WEB SECURITY",
+    "OSINT",
+    "RECON",
+    "LINUX",
+    "BASH",
+    "ASP.NET",
+    "SQL SERVER",
+    "ANDROID"
+  ],
+  "technical_foundations": [
+    "Bash scripting — NightHawk",
+    "ASP.NET WebForms — KDB Book Manager",
+    "SQL Server — KDB Book Manager and Simple User Admin Panel",
+    "Android application development — MultiFunc",
+    "JavaScript / HTML / CSS — Snake Game"
+  ],
+  "projects": [
+    {
+      "name": "NightHawk",
+      "url": "https://github.com/hox3r/NightHawk",
+      "description": "A Bash utility for Kali Linux that discovers package mirrors, measures response times, backs up APT sources, and updates the configuration after confirmation.",
+      "tags": [
+        "Bash",
+        "Linux",
+        "APT",
+        "Automation"
+      ]
+    },
+    {
+      "name": "KDB Book Manager",
+      "url": "https://github.com/hox3r/KDB-BookManager",
+      "description": "An ASP.NET WebForms application for managing book records with SQL Server, including create, edit, delete, and view operations.",
+      "tags": [
+        "ASP.NET WebForms",
+        "C#",
+        "SQL Server"
+      ]
+    },
+    {
+      "name": "Simple User Admin Panel",
+      "url": "https://github.com/hox3r/simple-user-admin-panel",
+      "description": "A SQL Server-backed user-management application with add, edit, delete, and list workflows.",
+      "tags": [
+        "ASP.NET",
+        "SQL Server",
+        "CRUD"
+      ]
+    },
+    {
+      "name": "MultiFunc",
+      "url": "https://github.com/hox3r/MultiFunc",
+      "description": "An Android utility application with SMS, BMI and age calculations, account flows, tutorials, calculator, discount calculation, and password generation.",
+      "tags": [
+        "Android",
+        "Mobile"
+      ]
+    },
+    {
+      "name": "Snake Game",
+      "url": "https://github.com/hox3r/snake-game",
+      "description": "A browser-based neon Snake game with keyboard controls and a Persian right-to-left interface.",
+      "tags": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "RTL"
+      ]
+    }
+  ],
+  "links": {
+    "github": "https://github.com/hox3r"
+  }
+}
