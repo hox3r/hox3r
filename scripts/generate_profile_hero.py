@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build monochrome animated ASCII portrait banners for the HOX3R profile."""
 from __future__ import annotations
-import argparse, json
+import argparse, json, random
 from pathlib import Path
 from xml.sax.saxutils import escape
 from PIL import Image, ImageOps, ImageFilter
@@ -57,13 +57,21 @@ def portrait_grid(path, cols=49, rows=49):
             cells.append((x,y,RAMP[idx],ink))
     return cells,cols,rows
 
-def portrait_markup(cells, x0, y0, cellw, cellh, font, prefix):
+def portrait_markup(cells, x0, y0, cellw, cellh, font, prefix, total_delay=2.7):
     out=[]
+    rng=random.Random(20261117)
     for x,y,ch,ink in cells:
         if ch==' ': continue
         tx=x0+x*cellw; ty=y0+(y+0.82)*cellh
+        # Arrival vectors originate from the nearest outer edge, with slight deterministic scatter.
+        distances=[x,48-x,y,48-y]; side=distances.index(min(distances))
+        if side==0: dx=-rng.randint(90,300); dy=rng.randint(-120,120)
+        elif side==1: dx=rng.randint(90,300); dy=rng.randint(-120,120)
+        elif side==2: dx=rng.randint(-140,140); dy=-rng.randint(90,260)
+        else: dx=rng.randint(-140,140); dy=rng.randint(90,260)
+        delay=(x*13+y*7)%97/97*total_delay
         opacity=max(.52,min(1,ink+.22))
-        out.append(f'<text x="{tx:.2f}" y="{ty:.2f}" class="glyph" fill-opacity="{opacity:.2f}">{escape(ch)}</text>')
+        out.append(f'<text x="{tx:.2f}" y="{ty:.2f}" class="glyph" opacity="0" fill-opacity="{opacity:.2f}">{escape(ch)}<animate attributeName="opacity" from="0" to="1" begin="{delay:.2f}s" dur=".45s" fill="freeze"/><animateTransform attributeName="transform" type="translate" from="{dx} {dy}" to="0 0" begin="{delay:.2f}s" dur=".78s" calcMode="spline" keySplines=".2 .7 .2 1" fill="freeze"/></text>')
     return ''.join(out)
 
 def svg_doc(profile,cells,cols,rows):
@@ -93,6 +101,7 @@ def svg_doc(profile,cells,cols,rows):
 .detail{{font:13px 'DejaVu Sans Mono',monospace;letter-spacing:1px;fill:#ddd}}
 .micro{{font:10px 'DejaVu Sans Mono',monospace;letter-spacing:1px;fill:#777}}
 .rule{{stroke:#555;stroke-width:1}}
+@media(prefers-reduced-motion:reduce){{.glyph animate,.glyph animateTransform{{display:none}}.glyph{{opacity:1}}}}
 </style>
 <rect x="{px-12}" y="{py-10}" width="{pw+24}" height="{ph+20}" fill="none" stroke="#555" stroke-width="1"/>
 <g>{glyphs}</g>
@@ -105,5 +114,5 @@ def main():
     cells,cols,rows=portrait_grid(args.source)
     OUT.mkdir(parents=True,exist_ok=True)
     (OUT/'hox3r-hero-desktop.svg').write_text(svg_doc(profile,cells,cols,rows),encoding='utf-8')
-    print('Generated static ASCII portrait banner.')
+    print('Generated animated ASCII portrait banner.')
 if __name__=='__main__': main()
