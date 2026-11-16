@@ -1,4 +1,11 @@
 <p align="center">
+  <picture>
+    <source media="(max-width: 760px)" srcset="./assets/hero/hox3r-hero-mobile.gif">
+    <img src="./assets/hero/hox3r-hero-desktop.gif" alt="HOX3R monochrome animated ASCII portrait assembling from characters, followed by a scanning line" width="100%">
+  </picture>
+</p>
+
+<p align="center">
   <strong>BUG BOUNTY · WEB APPLICATION SECURITY · SECURITY RESEARCH</strong>
 </p>
 
