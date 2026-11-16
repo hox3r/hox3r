@@ -90,6 +90,7 @@ def svg_doc(profile,cells,cols,rows):
     panel+=''.join(f'<text x="560" y="{385+i*27}" class="detail">/ {escape(a.upper())}</text>' for i,a in enumerate(areas))
     panel+=f'<text x="560" y="482" class="micro">{uname}@profile:~$ whoami</text>'
     glyphs=portrait_markup(cells,px,py,cw,ch,8.2,'p')
+    scan=f'''<g class="scan" opacity="0"><rect x="{px-8}" y="{py}" width="{pw+16}" height="3" fill="#fff" opacity=".9"/><rect x="{px-8}" y="{py-7}" width="{pw+16}" height="17" fill="#fff" opacity=".12"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.05;.92;1" dur="5.8s" begin="4.1s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;0 {ph}" keyTimes="0;1" dur="1.55s" begin="4.1s" repeatCount="indefinite"/></g>'''
     return f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="HOX3R monochrome animated ASCII portrait">
 <rect width="{W}" height="{H}" fill="#000"/>
 <style>
@@ -101,10 +102,10 @@ def svg_doc(profile,cells,cols,rows):
 .detail{{font:13px 'DejaVu Sans Mono',monospace;letter-spacing:1px;fill:#ddd}}
 .micro{{font:10px 'DejaVu Sans Mono',monospace;letter-spacing:1px;fill:#777}}
 .rule{{stroke:#555;stroke-width:1}}
-@media(prefers-reduced-motion:reduce){{.glyph animate,.glyph animateTransform{{display:none}}.glyph{{opacity:1}}}}
+@media(prefers-reduced-motion:reduce){{.glyph animate,.glyph animateTransform,.scan animate,.scan animateTransform{{display:none}}.glyph{{opacity:1}}}}
 </style>
 <rect x="{px-12}" y="{py-10}" width="{pw+24}" height="{ph+20}" fill="none" stroke="#555" stroke-width="1"/>
-<g>{glyphs}</g>
+<g>{glyphs}</g>{scan}
 {panel}
 </svg>'''
 
@@ -114,5 +115,5 @@ def main():
     cells,cols,rows=portrait_grid(args.source)
     OUT.mkdir(parents=True,exist_ok=True)
     (OUT/'hox3r-hero-desktop.svg').write_text(svg_doc(profile,cells,cols,rows),encoding='utf-8')
-    print('Generated animated ASCII portrait banner.')
+    print('Generated animated ASCII portrait banner with scan effect.')
 if __name__=='__main__': main()
