@@ -1,0 +1,27 @@
+# Local source material — never publish the original portrait by default
+assets/source/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local secrets and environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# OS / editor artifacts
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Logs and generated temporary output
+*.log
+.tmp/
