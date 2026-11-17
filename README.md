@@ -40,7 +40,7 @@
     goal             = financial_success
 
     [mindset]
-    workflow         = know -> analyze -> exploit
+    workflow         = understand -> analyze -> exploit
 ```
 
 
@@ -145,11 +145,13 @@
 </p>
 
 
-## <code>hox3r@profile:~$ ./connect.sh</code>
+## `hox3r@profile:~$ ./connect.sh`
 
 - **GitHub:** [github.com/hox3r](https://github.com/hox3r)
-- **Repositories:** [Browse public projects](https://github.com/hox3r?tab=repositories)
-
+- **Email:** [hox3r@proton.me](mailto:hox3r@proton.me)
+- **Instagram:** [coming soon](https://www.instagram.com/hox3r/)
+- **X:** [coming soon](https://x.com/hox3r)
+- **LinkedIn:** [coming soon](https://www.linkedin.com/in/hox3r/)
 ---
 
 <p align="center"><code> Follow me and welcome to the hackers community. </code></p>
