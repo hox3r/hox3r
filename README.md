@@ -119,7 +119,7 @@
 
 ### `04 / PROGRAMMING`
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=python,bash,c,cpp" />
+  <img src="https://skillicons.dev/icons?i=python,bash,c,cpp,javascript" />
 </p>
 
 ### `05 / SYSTEMS & INFRASTRUCTURE`
