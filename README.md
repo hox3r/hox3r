@@ -119,7 +119,7 @@
 
 ### `04 / PROGRAMMING`
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=python,bash,c,cpp" />
+  <img src="https://skillicons.dev/icons?i=python,bash,c,cpp,javascript" />
 </p>
 
 ### `05 / SYSTEMS & INFRASTRUCTURE`
@@ -128,8 +128,13 @@
 </p>
 
 ### `06 / AUTOMATION & AI`
+
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=python,github" />
+  <img src="https://skillicons.dev/icons?i=python,bash,docker" />
+  <img src="https://img.shields.io/badge/n8n-EA4B71?style=for-the-badge&logo=n8n&logoColor=white" />
+  <img src="https://img.shields.io/badge/CrewAI-202020?style=for-the-badge&logoColor=white" />
+  <img src="https://img.shields.io/badge/MCP-6B46C1?style=for-the-badge&logoColor=white" />
+  <img src="https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logoColor=white" />
 </p>
 
 
